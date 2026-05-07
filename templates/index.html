@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Converter</h1>
+        
+        <div class="subject-row">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" placeholder="Enter amount" value="1" required>
+        </div>
+
+        <div class="subject-row">
+            <label for="from-currency">From</label>
+            <select id="from-currency">
+                <option value="USD">USD - US Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - British Pound</option>
+                <option value="INR" selected>INR - Indian Rupee</option>
+                <option value="JPY">JPY - Japanese Yen</option>
+            </select>
+        </div>
+
+        <div class="subject-row">
+            <label for="to-currency">To</label>
+            <select id="to-currency">
+                <option value="USD" selected>USD - US Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - British Pound</option>
+                <option value="INR">INR - Indian Rupee</option>
+                <option value="JPY">JPY - Japanese Yen</option>
+            </select>
+        </div>
+
+        <button type="button" class="calc-btn" id="convert-btn">Convert Currency</button>
+
+        <div class="result" id="result-div" style="display: none;">
+            <h2 id="converted-value">0.00</h2>
+            <p class="rate-text" id="rate-text">1 INR = 0.012 USD</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
